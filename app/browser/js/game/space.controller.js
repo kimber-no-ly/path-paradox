@@ -1,4 +1,4 @@
-tsuro.controller('spaceCtrl', function($scope){
+pathParadox.controller('spaceCtrl', function($scope){
 
   $scope.playerOnThisSpace = function findPlayerOnThisSpace(){
     var players = $scope.game.players;

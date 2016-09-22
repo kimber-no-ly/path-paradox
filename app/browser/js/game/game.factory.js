@@ -1,4 +1,4 @@
-tsuro.factory('gameFactory', function($firebaseAuth, $state, $rootScope) {
+pathParadox.factory('gameFactory', function($firebaseAuth, $state, $rootScope) {
     return {
         markers: ["red", "purple", "yellow", "pink", "jade", "sky", "ocean", "green"],
         tiles: {

@@ -1,6 +1,6 @@
-var tsuro = angular.module('Tsuro', ['ui.router', 'firebase']);
+var pathParadox = angular.module('PathParadox', ['ui.router', 'firebase']);
 
-tsuro.config(function () {
+pathParadox.config(function () {
     var config = {
         apiKey: "AIzaSyCLm3jkk5ppMqeQxKoH-dZ9CdYMaDGWWqU",
         authDomain: "the-paths-of-dragons.firebaseapp.com",
@@ -10,9 +10,9 @@ tsuro.config(function () {
     firebase.initializeApp(config);
 });
 
-tsuro.constant('firebaseUrl', 'https://the-paths-of-dragons.firebaseio.com/');
+pathParadox.constant('firebaseUrl', 'https://the-paths-of-dragons.firebaseio.com/');
 
-tsuro.config(function ($urlRouterProvider, $locationProvider) {
+pathParadox.config(function ($urlRouterProvider, $locationProvider) {
     // remove '#' from urls
     // $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/login');

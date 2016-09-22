@@ -1,4 +1,4 @@
-tsuro.config(function ($stateProvider) {
+pathParadox.config(function ($stateProvider) {
     $stateProvider.state('learntoplay', {
         url: '/learntoplay',
         templateUrl: '/browser/js/learnToPlay/learntoplay.html',

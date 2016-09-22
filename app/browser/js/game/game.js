@@ -1,4 +1,4 @@
-tsuro.config(function($stateProvider) {
+pathParadox.config(function($stateProvider) {
     $stateProvider.state('game', {
         url: '/game/:gameName',
         templateUrl: '/browser/js/game/game.html',
@@ -6,7 +6,7 @@ tsuro.config(function($stateProvider) {
     });
 });
 
-tsuro.controller('gameCtrl', function($scope, $firebaseAuth, firebaseUrl, $stateParams, $firebaseObject, $firebaseArray, $state, gameFactory, $window) {
+pathParadox.controller('gameCtrl', function($scope, $firebaseAuth, firebaseUrl, $stateParams, $firebaseObject, $firebaseArray, $state, gameFactory, $window) {
     var ref = firebase.database().ref();
     var obj = $firebaseObject(ref);
 

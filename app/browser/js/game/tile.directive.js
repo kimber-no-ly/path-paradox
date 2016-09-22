@@ -1,4 +1,4 @@
-tsuro.directive('tile', function () {
+pathParadox.directive('tile', function () {
     return {
         templateUrl: 'browser/js/game/tile.directive.html',
         scope: {

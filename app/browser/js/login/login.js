@@ -1,4 +1,4 @@
-tsuro.config(function ($stateProvider) {
+pathParadox.config(function ($stateProvider) {
     $stateProvider.state('login', {
         url: '/login',
         templateUrl: '/browser/js/login/login.html',
@@ -6,6 +6,6 @@ tsuro.config(function ($stateProvider) {
     });
 });
 
-tsuro.controller('loginCtrl', function ($scope, gameFactory) {
+pathParadox.controller('loginCtrl', function ($scope, gameFactory) {
     $scope.logInWithGoogle = gameFactory.logInWithGoogle;
 });

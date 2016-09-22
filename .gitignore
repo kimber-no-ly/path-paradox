@@ -1,8 +1,7 @@
-node_modules
 .DS_Store
 .gitignore
-main.js
+node_modules
 app/public/
-app/public/main.js
+main.js
 firebase-debug.log
 npm-debug.log

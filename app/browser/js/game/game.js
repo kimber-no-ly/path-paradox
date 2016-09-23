@@ -4,9 +4,7 @@ pathParadox.config(function($stateProvider) {
         templateUrl: '/browser/js/game/game.html',
         controller: 'gameCtrl'
     });
-});
-
-pathParadox.controller('gameCtrl', function($scope, $firebaseAuth, firebaseUrl, $stateParams, $firebaseObject, $firebaseArray, $state, gameFactory, $window) {
+}).controller('gameCtrl', function($scope, $firebaseAuth, firebaseUrl, $stateParams, $firebaseObject, $firebaseArray, $state, gameFactory, gameAssets, $window) {
     var ref = firebase.database().ref();
     var obj = $firebaseObject(ref);
 
@@ -124,10 +122,10 @@ pathParadox.controller('gameCtrl', function($scope, $firebaseAuth, firebaseUrl, 
 
     });
     //possible starting point options listed in arrays on the board 
-    $scope.starttop = gameFactory.starttop;
-    $scope.startleft = gameFactory.startleft;
-    $scope.startbottom = gameFactory.startbottom;
-    $scope.startright = gameFactory.startright;
+    $scope.starttop = gameAssets.starttop;
+    $scope.startleft = gameAssets.startleft;
+    $scope.startbottom = gameAssets.startbottom;
+    $scope.startright = gameAssets.startright;
 
     //for assigning the dragon (if the deck runs out of cards)
     $scope.dragon;
@@ -249,7 +247,7 @@ pathParadox.controller('gameCtrl', function($scope, $firebaseAuth, firebaseUrl, 
 
         space.image = addedTile.img;
         space.rotation = addedTile.rotation;
-        var tile = gameFactory.tiles[addedTile.tileId]; // look up tile by id
+        var tile = gameAssets.tiles[addedTile.tileId]; // look up tile by id
         var rotatedTile = gameFactory.rotateTile(tile, snapshot.val().rotation); // rotate tile
 
         for (var i = 0; i < rotatedTile.paths.length; i++) {
@@ -397,10 +395,10 @@ pathParadox.controller('gameCtrl', function($scope, $firebaseAuth, firebaseUrl, 
     $scope.reset = function() {
         spaceObj.$remove();
         markersArr.$remove(0);
-        markersArr.$add(gameFactory.markers);
+        markersArr.$add(gameAssets.markers);
         deckArr.$remove(0);
 
-        var tiles = gameFactory.tiles;
+        var tiles = gameAssets.tiles;
         var deck = new Deck(tiles).shuffle().tiles;
         deckArr.$add(deck);
         gameRef.update({

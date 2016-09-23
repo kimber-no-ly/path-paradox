@@ -6,7 +6,7 @@ pathParadox.config(function ($stateProvider) {
     });
 });
 
-pathParadox.controller('pickGameCtrl', function ($scope, $state, $firebaseArray, $firebaseObject, gameFactory) {
+pathParadox.controller('pickGameCtrl', function ($scope, $state, $firebaseArray, $firebaseObject, gameAssets) {
     var ref = firebase.database().ref();
     var obj = $firebaseObject(ref);
 
@@ -46,12 +46,12 @@ pathParadox.controller('pickGameCtrl', function ($scope, $state, $firebaseArray,
             }
         });
 
-        var tiles = gameFactory.tiles;
+        var tiles = gameAssets.tiles;
 
         var deck = new Deck(tiles).shuffle().tiles;
         deckArr.$add(deck);
 
-        markersArr.$add(gameFactory.markers);
+        markersArr.$add(gameAssets.markers);
 
 
         $state.go('game', {

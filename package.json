@@ -4,7 +4,7 @@
   "description": "A game of paths :) ",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test",
+    "test": "mocha app/browser/js/**/*.test.js",
 		"start": "firebase serve",
     "deploy": "firebase deploy"
   },
